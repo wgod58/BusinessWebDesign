@@ -1,0 +1,1 @@
+java -jar vue2ts.jar %*

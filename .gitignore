@@ -1,0 +1,12 @@
+﻿# 忽略 components下，所有元件資料夾下的 ts & js
+components/**/*.ts
+components/**/*.js
+
+# 但不包含 main.ts
+!components/main.ts
+
+# store
+store/store.js
+
+# router
+router/router.js
