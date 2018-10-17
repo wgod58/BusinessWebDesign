@@ -4,9 +4,7 @@
     <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
       <div class="w3-left w3-hover-text-khaki" v-on:click="plusDivs(-1)">&#10094;</div>
       <div class="w3-right w3-hover-text-khaki" v-on:click="plusDivs(1)">&#10095;</div>
-      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" v-on:click="currentDiv(1)"></span>&nbsp;
-      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" v-on:click="currentDiv(2)"></span>&nbsp;
-      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" v-on:click="currentDiv(3)"></span>
+      <span v-for="(item, index) in imgsLocation" class="w3-badge demo w3-border w3-transparent w3-hover-white" v-on:click="currentDiv(index+1)">&nbsp;</span>&nbsp;
     </div>
   </div>
 </template>
@@ -51,11 +49,16 @@ export default {
     }
   },
   created() {},
+  watch: {
+    imgData: function(value) {
+      this.currentDiv(1);
+    }
+  },
   computed: {
     imgsLocation() {
       var self = this;
       var data = [];
-      for (var i = 1; i < this.imgData.length; i++) {
+      for (var i = 0; i < this.imgData.length; i++) {
         data.push("./assets/images/pick/" + this.imgData[i] + ".JPG");
       }
       return data;
@@ -63,7 +66,7 @@ export default {
   },
   mounted() {
     var self = this;
-    self.showDivs(self.slideIndex);
+    self.showDivs(1);
   },
   components: {}
 };
@@ -76,7 +79,7 @@ export default {
 .slideImg .w3-right,
 .slideImg .w3-badge {
   cursor: pointer;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
 }
 .slideImg .w3-badge {
   height: 13px;

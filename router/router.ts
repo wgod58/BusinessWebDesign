@@ -8,12 +8,12 @@ Vue.use(VueRouter)
 const routes = [
     {
         //path: '/:id',
-        path: '/screw/mainbody',
+        path: '/main',
         name: 'mainbody',
         //props: true,
         component: mainbody,
-    },{
-        path: '/screw/',
+    }, {
+        path: '/',
         name: 'home',
         component: home,
     }
@@ -21,7 +21,7 @@ const routes = [
 
 export default new VueRouter({
     routes: routes,
-    mode: 'history',
+    //mode: 'history',
     fallback: false,
 });
 

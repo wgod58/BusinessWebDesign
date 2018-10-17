@@ -1,85 +1,34 @@
 <template>
     <div class="mainBody">
         <div class="w3-top w3-bar w3-white w3-wide w3-padding w3-card">
-            <a href="#home" class="w3-bar-item w3-button"><b>AMD</b></a>
+            <a v-on:click="toMainPage" class="w3-half w3-bar-item w3-button">
+                <img class="logo w3-image" src="./assets/images/pick/logo.jpg" alt="logo">
+            </a>
             <!-- Float links to the right. Hide them on small screens -->
-            <div class="w3-right ">
-                <a href="#projects" class="w3-bar-item w3-button">Showcase</a>
-                <a href="#about" class="w3-bar-item w3-button">About</a>
-                <a href="#contact" class="w3-hide-small w3-bar-item w3-button">Contact</a>
+            <div class="w3-half w3-right " id="navbarItem">
+                <a v-on:click='toElement(" #showCase")' class="w3-bar-item w3-button"><b>Showcase</b></a>
+                <a v-on:click='toElement(" #about")' class="w3-bar-item w3-button"><b>About</b></a>
+                <a v-on:click='toElement(" #contact")' class=" w3-bar-item w3-button"><b>Contact</b></a>
             </div>
         </div>
-        <br>
         <!-- Header -->
         <header v-show="!showSlideImg" class="w3-display-container w3-content w3-wide w3-margin-top" style="max-width:1500px;" id="home">
-            <img class="w3-image w3-animate-zoom" src="./assets/images/pick/b.jpg" alt="Architecture" width="1500" height="800">
+            <img class="w3-image w3-animate-zoom" src="./assets/images/pick/b.jpg" alt="Architecture" width="1500" height="800" id="homeImg">
         </header>
-        <slideImg v-bind:imgData="imgData" v-show="showSlideImg"> </slideImg>
+        <slideImg v-show="showSlideImg" v-bind:imgData="imgData" v-show="showSlideImg" id="slideImg"> </slideImg>
 
         <!-- Page content -->
         <div class="w3-content w3-padding" style="max-width:1564px">
 
             <!-- Project Section -->
-            <div class="w3-container w3-padding-32" id="projects">
+            <div class="showCase w3-container w3-padding-32" id="showCase">
                 <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Showcase</h3>
             </div>
             <div class="w3-section">
-                <button v-on:click='ashowSlideImg()' v-for="(item, index) in bArrays" v-bind:class="{ 'w3-black': index%2==0 }" class="w3-large w3-button w3-block "><b>{{item}}</b></button>
+                <button v-on:click='ashowSlideImg(index)' v-for="(item, index) in bArrays" v-bind:class="{ 'w3-black': index%2==0 }" class="w3-large w3-button w3-block "><b>{{item}}</b></button>
             </div>
-            <!-- <div class="w3-container">
-                <div class="w3-content w3-display-container">
-
-                    <div class="w3-display-container mySlides">
-                        <img src="./assets/images/pick/Anti-dismantle1.JPG" style="width:100%">
-
-                    </div>
-
-                    <div class="w3-display-container mySlides">
-                        <img src="./assets/images/pick/Anti-dismantle2.JPG" style="width:100%">
-
-                    </div>
-
-                    <button class="w3-button w3-display-left w3-black" v-on:click="plusDivs(-1)">&#10094;</button>
-                    <button class="w3-button w3-display-right w3-black" v-on:click="plusDivs(1)">&#10095;</button>
-
-                </div>
-            </div>-->
-            <!--
-            <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
-
-                <div class="w3-content w3-display-container">
-
-                    <div class="w3-display-container mySlides">
-                        <img src="./assets/images/pick/Anti-dismantle1.JPG" style="width:100%">
-
-                    </div>
-
-                    <div class="w3-display-container mySlides">
-                        <img src="./assets/images/pick/Anti-dismantle2.JPG" style="width:100%">
-
-                    </div>
-
-                    <button class="w3-button w3-display-left w3-black" v-on:click="plusDivs(-1)">&#10094;</button>
-                    <button class="w3-button w3-display-right w3-black" v-on:click="plusDivs(1)">&#10095;</button>
-
-                </div>
-            </div>-->
-            <!--<div v-for="array in arrays" class="w3-row-padding">
-        <div v-for="object in array" class="w3-col l3 m6 w3-margin-bottom">
-          <div class="w3-display-container">
-            <div class="w3-display-topleft w3-black w3-padding">{{object.name}}</div>
-            <img v-on:click='showImgModal(object.id)' v-bind:src='"./assets/images/pick/" +object.id+".JPG"' alt="Screw" style="width:100%">
-          </div>
-        </div>
-      </div>
-      <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
-        <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
-        <div class="w3-modal-content w3-animate-zoom">
-          <img v-bind:src="modalUrl" style="width:100%">
-        </div>
-      </div>-->
             <!-- About Section -->
-            <div class="w3-content" style="max-width:700px" id="about">
+            <div class="about w3-content" style="max-width:700px" id="about">
                 <h5 class="w3-center w3-padding-64">
                     <span class="w3-tag w3-wide">ABOUT US</span>
                 </h5>
@@ -112,7 +61,7 @@
         </div>
 
         <!-- Footer -->
-        <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+        <footer class="w3-padding-20 w3-light-grey w3-small w3-center" id="footer">
             <div class="w3-row-padding">
                 <h4>Store</h4>
                 <p>
@@ -122,11 +71,6 @@
                 <p>
                     <i class="fa fa-fw fa-envelope"></i> ex@mail.com</p>
                 <br>
-                <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
-                <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
-                <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
-                <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
-                <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
             </div>
         </footer>
     </div>
@@ -138,7 +82,7 @@ export default {
   template: template,
   data() {
     return {
-      imgData: ["Anti-dismantle1", "Anti-dismantle2", "Anti-dismantle3"],
+      imgData: [],
       showSlideImg: false,
       slideIndex: 1,
       bArrays: [
@@ -151,33 +95,52 @@ export default {
         "Bull"
       ],
       arrays: [
+        ["Hexalobular1", "Hexalobular2", "Hexalobular3", "Hexalobular4"],
+        ["Anti-dismantle1", "Anti-dismantle2", "Anti-dismantle3"],
         [
-          { id: "benz", name: "Benz" },
-          { id: "benz4", name: "Benz" },
-          { id: "bmw", name: "BMW" },
-          { id: "bmw2", name: "BMW" }
+          "Propeller1",
+          "Propeller2",
+          "Propeller3",
+          "Propeller4",
+          "Propeller5",
+          "Propeller6"
         ],
         [
-          { id: "la", name: "Lamborghini" },
-          { id: "fa", name: "Ferrari" },
-          { id: "fa1", name: "Ferrari" },
-          { id: "fa3", name: "Ferrari" }
+          "triplegram1",
+          "triplegram2",
+          "triplegram3",
+          "triplegram4",
+          "triplegram5"
         ],
-        [
-          { id: "por", name: "Porsche" },
-          { id: "por2", name: "Porsche" },
-          { id: "sa", name: "Hexalobular" },
-          { id: "sa2", name: "Hexalobular" }
-        ]
+        ["Shield1", "Shield2", "Shield3", "Shield4"],
+        ["Steed1", "Steed2", "Steed3", "Steed4"],
+        ["Bull"]
       ],
       modalUrl: "",
       isActive: true
     };
   },
   methods: {
-    ashowSlideImg() {
-      console.log("123469995");
+    toElement(data) {
+      var height = $(data).offset().top; // y軸
+      var $htmlBody = $("html, body");
+      $htmlBody.animate(
+        {
+          scrollTop: height - 40
+        },
+        600
+      );
+    },
+    toMainPage() {
+      this.showSlideImg = false;
+      this.scrollToTop();
+    },
+    ashowSlideImg(index) {
+      this.imgData = this.arrays[index];
       this.showSlideImg = true;
+      this.scrollToTop();
+    },
+    scrollToTop() {
       var body = $("html, body");
       body.stop().animate({ scrollTop: 0 }, 500);
     },
@@ -207,10 +170,28 @@ export default {
   },
   created: function() {
     //document.getElementById("myBtn").click();
+    this.imgData = this.arrays[0];
   },
   mounted() {},
   components: { slideImg }
 };
 </script>
 <style >
+.mainBody .logo {
+  width: 307px;
+  height: 273px;
+  margin-top: -99px;
+  margin-left: -80px;
+  margin-bottom: -150px;
+}
+
+.mainBody #homeImg {
+  margin-top: 77px;
+}
+.mainBody #slideImg {
+  margin-top: 92px;
+}
+.mainBody #navbarItem {
+  font-size: 10px;
+}
 </style>

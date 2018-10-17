@@ -1,6 +1,6 @@
 <template>
-  <div class="w3-display-middle">
-    <img class="w3-animate-top w3-image" src="./assets/images/pick/logo.jpg" alt="logo" width="100%" height="100%">
+  <div class="home w3-display-middle">
+    <img class="w3-animate-fading w3-image" src="./assets/images/pick/logo.jpg" alt="logo" width="100%" height="100%">
   </div>
 
 </template>
@@ -14,11 +14,14 @@ export default {
   methods: {},
   created: function() {
     setTimeout(() => {
-      this.$router.push("mainbody");
-    }, 2000);
+      this.$router.push({ name: "mainbody" });
+    }, 4500);
   },
   components: {}
 };
 </script>
 <style>
+.home .w3-image {
+  min-width: 450px;
+}
 </style>
