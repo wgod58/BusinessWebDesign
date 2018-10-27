@@ -25,7 +25,7 @@
     </div>
 
     <!-- Header -->
-    <header v-show="!showSlideImg" class="w3-center w3-display-container w3-content w3-wide w3-margin-top" style="max-width:1500px;" id="home">
+    <header v-show="!showSlideImg" class="w3-center w3-display-container w3-content w3-wide w3-margin-top" style="max-width:700px" id="home">
       <img class="w3-image w3-animate-zoom" src="./assets/images/pick/b.jpg" alt="Architecture" width="1500" height="800" id="homeImg">
     </header>
     <slideImg v-show="showSlideImg" v-bind:imgData="imgData" v-show="showSlideImg" id="slideImg"> </slideImg>
@@ -205,6 +205,7 @@ export default {
       }
     },
     sendMailAjax(toEmail) {
+      var self = this;
       Email.send(
         "apexSystem@apex.com",
         toEmail,
@@ -247,7 +248,6 @@ export default {
 
 .mainBody #homeImg {
   margin-top: 77px;
-  max-width: 900px;
 }
 .mainBody #slideImg {
   margin-top: 77px;
