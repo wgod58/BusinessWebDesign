@@ -1,10 +1,10 @@
 <template>
-  <div class="slideImg w3-content w3-display-container" style="max-width:800px">
-    <img v-for="(item, index) in imgsLocation" class="mySlides" v-bind:src='item' style="width:100%">
-    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+  <div class="slideImg w3-content w3-display-container" style="max-width:700px">
+    <img id="slideImg" v-for="(item, index) in imgsLocation" class="mySlides" v-bind:src='item' style="width:100%">
+    <div class="w3-center w3-container w3-section w3-large w3-text-gray w3-display-bottommiddle" style="width:100%">
       <div class="w3-left w3-hover-text-khaki" v-on:click="plusDivs(-1)">&#10094;</div>
       <div class="w3-right w3-hover-text-khaki" v-on:click="plusDivs(1)">&#10095;</div>
-      <span v-for="(item, index) in imgsLocation" class="w3-badge demo w3-border w3-transparent w3-hover-white" v-on:click="currentDiv(index+1)">&nbsp;</span>&nbsp;
+      <span v-for="(item, index) in imgsLocation" class="img w3-badge demo w3-border w3-transparent w3-hover-gray" v-on:click="currentDiv(index+1)">&nbsp;</span>&nbsp;
     </div>
   </div>
 </template>
@@ -42,10 +42,10 @@ export default {
         x[i].style.display = "none";
       }
       for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" w3-white", "");
+        dots[i].className = dots[i].className.replace(" w3-gray", "");
       }
       x[self.slideIndex - 1].style.display = "block";
-      dots[self.slideIndex - 1].className += " w3-white";
+      dots[self.slideIndex - 1].className += " w3-gray";
     }
   },
   created() {},
@@ -59,7 +59,7 @@ export default {
       var self = this;
       var data = [];
       for (var i = 0; i < this.imgData.length; i++) {
-        data.push("./assets/images/pick/" + this.imgData[i] + ".JPG");
+        data.push("./assets/images/pick/" + this.imgData[i]);
       }
       return data;
     }
@@ -85,5 +85,9 @@ export default {
   height: 13px;
   width: 13px;
   padding: 0;
+}
+.slideImg .img {
+  margin: 3.5px;
+  margin-top: -120px;
 }
 </style>
