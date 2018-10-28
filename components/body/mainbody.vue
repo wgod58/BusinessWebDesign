@@ -35,7 +35,7 @@
 
       <!-- Project Section -->
       <div class="showCase w3-container w3-padding-32" id="showCase">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"><b>Modify Screw</b></h3>
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"><b>Modified Screw</b></h3>
       </div>
       <div class="w3-section">
         <button v-on:click='ashowSlideImg(index)' v-for="(item, index) in bArrays" v-bind:class="{ 'w3-black': index%2==0 }" class="w3-large w3-button w3-block "><b>{{item}}</b></button>
@@ -50,9 +50,9 @@
         <p>Our brand believes in the infinite possibilities that different designs can bring to our lives, and we will continue to uphold our quality to the highest standards of manufacturing !</p>
         <div class="w3-panel w3-leftbar w3-light-grey">
           <p>
-            <i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i>
+            <i>“It’s our passion to bring a little more amazement to the world.”</i>
           </p>
-          <p>Chef, Coffeeist and Owner: Liam Brown</p>
+          <p class="w3-right"> -ApexMetalleDesign</p>
         </div>
       </div>
       <!-- Contact Section -->
@@ -78,7 +78,7 @@
     <footer class="w3-padding-30 w3-light-grey w3-small w3-center" id="footer">
       <div class="w3-row-padding">
         <p>
-          <i class="fa fa-fw fa-fax"></i> 020411133333</p>
+          <i class="fa fa-fw fa-fax"></i> +886 229883108</p>
         <p>
           <i class="fa fa-fw fa-envelope"></i> amd@apexmetalledesign.com</p>
         <div class="w3-col w3-center">
@@ -212,11 +212,11 @@ export default {
         "Contact info",
         "name : " +
           self.name +
-          "<br>email : " +
+          " email : " +
           self.email +
-          "<br>subject : " +
+          " subject : " +
           self.subject +
-          "<br>content : " +
+          " content : " +
           self.content,
         "smtp.gmail.com",
         "wu0h96321@gmail.com",
