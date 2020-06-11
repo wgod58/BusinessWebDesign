@@ -10,3 +10,4 @@ store/store.js
 
 # router
 router/router.js
+node_modules
