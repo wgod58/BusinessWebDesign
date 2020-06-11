@@ -1,8 +1,0 @@
-{
-    "compilerOptions": {
-        "allowSyntheticDefaultImports": true,
-        "module": "amd",
-        "removeComments": true,
-        "target": "es5"
-    }
-}
