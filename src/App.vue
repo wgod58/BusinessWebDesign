@@ -234,9 +234,40 @@ export default {
       ],
       titaniumItems: [
         {
+          name: 'Lamborghini',
+          text: 'TI6AL4V M14 - P1.5 x 35L',
+          data: [
+            'titanium/l1.jpg',
+            'titanium/l2.jpg',
+            'titanium/l3.jpg',
+            'titanium/l4.jpg',
+            'titanium/l5.jpg',
+            'titanium/l6.jpg',
+            'titanium/l7.jpg',
+            'titanium/l8.jpg',
+            'titanium/l9.jpg',
+            'titanium/l10.jpg',
+            'titanium/l11.jpg',
+            'titanium/l12.jpg',
+            'titanium/l13.jpg',
+            'titanium/l14.jpg',
+            'titanium/l15.jpg',
+            'titanium/l16.jpg',
+            'titanium/l17.jpg',
+          ],
+        },
+        {
           name: 'Porsche',
           text: 'TI6AL4V M14 - P1.5 x 35L',
           data: [
+            'titanium/p1.jpg',
+            'titanium/p2.jpg',
+            'titanium/p3.jpg',
+            'titanium/p4.jpg',
+            'titanium/p5.jpg',
+            'titanium/p6.jpg',
+            'titanium/p7.jpg',
+            'titanium/p8.jpg',
             'titanium/p1-min.jpg',
             'titanium/p2-min.jpg',
             'titanium/p3-min.jpg',
@@ -292,7 +323,7 @@ export default {
   },
   methods: {
     toElement(data) {
-      var height = $(data).offset().top; // y軸
+      var height = $(data).offset().top;
       var $htmlBody = $('html, body');
       $htmlBody.animate(
         {
@@ -350,12 +381,12 @@ export default {
     },
     showModal() {
       document.getElementById('modal01').style.display = 'block';
-      setTimeout(function() {
+      setTimeout(function () {
         document.getElementById('modal01').style.display = 'none';
       }, 4000);
     },
   },
-  created: function() {
+  created: function () {
     setTimeout(() => {
       this.isShow = false;
     }, 4500);
