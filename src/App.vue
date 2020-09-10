@@ -51,7 +51,7 @@
       <!-- Project Section 1 -->
       <div class="showCase w3-container" id="showCase">
         <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
-          <b>Titanium bolts</b>
+          <b>Titanium-bolt samples</b>
         </h3>
       </div>
       <div class="w3-section">
@@ -234,58 +234,23 @@ export default {
       ],
       titaniumItems: [
         {
-          name: 'Lamborghini',
+          name: 'Lamborghini LP610-4',
           text: 'TI6AL4V M14 - P1.5 x 35L',
           data: [
             'titanium/l1.jpg',
-            'titanium/l2.jpg',
             'titanium/l3.jpg',
             'titanium/l4.jpg',
-            'titanium/l5.jpg',
-            'titanium/l6.jpg',
-            'titanium/l7.jpg',
-            'titanium/l8.jpg',
-            'titanium/l9.jpg',
-            'titanium/l10.jpg',
             'titanium/l11.jpg',
-            'titanium/l12.jpg',
             'titanium/l13.jpg',
             'titanium/l14.jpg',
-            'titanium/l15.jpg',
             'titanium/l16.jpg',
+            'titanium/l5.jpg',
+            'titanium/l9.jpg',
             'titanium/l17.jpg',
           ],
         },
         {
-          name: 'Porsche',
-          text: 'TI6AL4V M14 - P1.5 x 35L',
-          data: [
-            'titanium/p1.jpg',
-            'titanium/p2.jpg',
-            'titanium/p3.jpg',
-            'titanium/p4.jpg',
-            'titanium/p5.jpg',
-            'titanium/p6.jpg',
-            'titanium/p7.jpg',
-            'titanium/p8.jpg',
-            'titanium/p9.jpg',
-            'titanium/p10.jpg',
-            'titanium/p11.jpg',
-            'titanium/p1-min.jpg',
-            'titanium/p2-min.jpg',
-            'titanium/p3-min.jpg',
-            'titanium/p4-min.jpg',
-            'titanium/p5-min.jpg',
-            'titanium/p6-min.jpg',
-            'titanium/p7-min.jpg',
-            'titanium/p8-min.jpg',
-            'titanium/p9-min.jpg',
-            'titanium/p10-min.jpg',
-            'titanium/p11-min.jpg',
-          ],
-        },
-        {
-          name: 'Maserati',
+          name: 'Maserati GranTurismo',
           text: 'TI6AL4V M14 - P1.5 x 35L',
           data: [
             'titanium/m1.jpg',
@@ -302,7 +267,40 @@ export default {
           ],
         },
         {
-          name: 'BMW',
+          name: 'Porsche 991',
+          text: 'TI6AL4V M14 - P1.5 x 35L',
+          data: [
+            'titanium/p1-min.jpg',
+            'titanium/p2-min.jpg',
+            'titanium/p3-min.jpg',
+            'titanium/p4-min.jpg',
+            'titanium/p5-min.jpg',
+            'titanium/p6-min.jpg',
+            'titanium/p7-min.jpg',
+            'titanium/p8-min.jpg',
+            'titanium/p9-min.jpg',
+            'titanium/p10-min.jpg',
+            'titanium/p11-min.jpg',
+          ],
+        },
+        {
+          name: 'Porsche 981 GTS',
+          text: 'TI6AL4V M14 - P1.5 x 35L',
+          data: [
+            'titanium/p1.jpg',
+            'titanium/p4.jpg',
+            'titanium/p5.jpg',
+            'titanium/p6.jpg',
+            'titanium/p3.jpg',
+            'titanium/p8.jpg',
+            'titanium/p7.jpg',
+            'titanium/p9.jpg',
+            'titanium/p10.jpg',
+            'titanium/p11.jpg',
+          ],
+        },
+        {
+          name: 'BMW M3',
           text: 'TI6AL4V M14 - P1.5 x 35L',
           data: [
             'titanium/b1.jpg',
@@ -433,5 +431,8 @@ export default {
 }
 .mainBody #textarea {
   min-height: 110px;
+}
+.w3-section {
+  font-family: fantasy;
 }
 </style>
